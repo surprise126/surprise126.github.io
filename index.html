@@ -4,16 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Akkie's Birthday Surprise</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-image: url('Stitch_wallpaper.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        h1 {
+            text-transform: uppercase; 
+            font-weight: bold; 
+            font-family: 'Dancing Script', cursive; 
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        h1 span {
+            color: #ff69b4; 
+        }
+
+        p {
+            text-transform: uppercase; 
+            font-weight: bold; 
+            font-family: 'Arial', sans-serif; 
+            color: #555;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        button {
+            position: relative;
+            background-color: #ff69b4; 
+            color: #000000;
+            padding: 15px 30px;
+            font-size: 2em;
+            text-transform: uppercase; 
+            font-weight: bold;
+            font-family: 'Dancing Script', cursive; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: transparent; 
+        }
+
+        button::before {
+            content: ''; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('button.jpg'); 
+            background-size: cover;
+            opacity: 0; 
+            transition: opacity 0.3s ease; 
+        }
+
+        button:hover::before {
+            opacity: 0.25; 
+        }
+
+        .cute-box {
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            width: 100px;
+            height: 100px;
+            background-color: #ff69b4;
+            border-radius: 15px; 
+            border: 3px solid #ff69b4; 
+            color: #000000;
+            font-weight: bold; 
+            font-family: 'Dancing Script', cursive; 
+            text-transform: uppercase; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.5s ease; 
+        }
+
+        .cute-box::after {
+            content: 'HERE!';
+            display: block;
+            margin-top: 10px; 
+        }
+
+        .cute-box:hover {
+            width: 200px; 
+            height: 200px;
+        }
+
+        .cute-box:hover::after {
+            content: 'Happy Birthday. I hope you are doing amazing!'; 
+        }
+        
+    </style>
 </head>
 <body>
-    <h1>Welcome, Akkie!</h1>
-    <p>Click the button below to reveal your birthday surprise:</p>
-    <button onclick="redirectToRepl()">Get Started</button>
+    <h1>HAPPY BIRTHDAY, <span>Akkie</span></h1>
+    <p>Click the button below to reveal your birthday surprise</p>
+    <button onclick="redirectToRepl()">SURPRISE!</button>
+
+    <div class="cute-box"></div>
 
     <script>
         function redirectToRepl() {
-            // Redirect to the Repl.it page where your Python code is hosted
-            window.location.href = "https://replit.com/@AbdullahHendy/Surprise?v=1";
+            window.open("https://replit.com/@AbdullahHendy/Surprise?v=1");
         }
     </script>
 </body>
