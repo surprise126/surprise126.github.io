@@ -105,7 +105,7 @@
         }
 
         .cute-box:hover {
-            width: 200px; 
+            width: 250px; 
             height: 200px;
         }
 
@@ -113,14 +113,53 @@
             content: 'Happy Birthday. I hope you are doing amazing!'; 
         }
         
+        .surprise-box {
+            position: absolute;
+            bottom: 15%;
+            right: 5%;
+            width: 100px;
+            height: 100px;
+            background-color: #ff69b4;
+            border-radius: 15px; 
+            border: 3px solid #ff69b4; 
+            color: #000000;
+            font-weight: bold; 
+            font-family: 'Dancing Script', cursive; 
+            text-transform: uppercase; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.5s ease; 
+        }
+
+        .surprise-box::after {
+            content: 'HERE!';
+
+            display: block;
+            margin-top: 10px; 
+        }
+
+        .surprise-box:hover {
+            width: 200px; 
+            height: 150px;
+        }
+
+        .surprise-box:hover::after {
+            content: 'AB12-CD3EFG-H4IJ5 Keep Searching for where to redeem!'; 
+            margin-top: 10px; 
+        }
+
+
     </style>
 </head>
 <body>
     <h1>HAPPY BIRTHDAY, <span>Akkie</span></h1>
-    <p>Click the button below to reveal your birthday surprise</p>
+    <p>Make sure you check everything before unwrapping the big surprise!</p>
     <button onclick="redirectToRepl()">SURPRISE!</button>
 
     <div class="cute-box"></div>
+    <div class="surprise-box"></div>
 
     <script>
         function redirectToRepl() {
