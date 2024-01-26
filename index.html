@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Akkie's Birthday Surprise</title>
+    <title>Welcome to Vané's Birthday Surprise</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -81,7 +81,7 @@
         .cute-box {
             position: absolute;
             top: 20%;
-            left: 5%;
+            left: 2.5%;
             width: 100px;
             height: 100px;
             background-color: #ff69b4;
@@ -95,7 +95,7 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.5s ease; 
+            transition: all 0.75s ease; 
         }
 
         .cute-box::after {
@@ -105,12 +105,13 @@
         }
 
         .cute-box:hover {
-            width: 250px; 
-            height: 200px;
+            width: 330px; 
+            height: 430px;
         }
 
         .cute-box:hover::after {
-            content: 'Happy Birthday. I hope you are doing amazing!'; 
+            content: "Happy Birthday Vane! I hope you're doing amazing. In the dawn of a new year's sun, may all your sadness will be gone. No for real though, you made it for another year on your way for success. I know it gets tough out there espeically in school but you've been doing great and you will continue to do so, I have no doubt in this. On another note, I am happy with the time I spend and spent with you. I truly hope each of us be the reason the other grows in life.\AYour KALBI, Abdullah ♥"; 
+            white-space: pre-line;
         }
         
         .surprise-box {
@@ -130,7 +131,7 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.5s ease; 
+            transition: all 0.75s ease; 
         }
 
         .surprise-box::after {
@@ -146,25 +147,57 @@
         }
 
         .surprise-box:hover::after {
-            content: 'AB12-CD3EFG-H4IJ5 Keep Searching for where to redeem!'; 
+            content: '73Z9-6TD4N3-KXA6 Keep Searching for where to redeem!'; 
             margin-top: 10px; 
         }
 
-
+        .vane-name {
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            color: #ff69b4;
+            font-family: 'Dancing Script', cursive;
+            font-size: 5em;
+            font-weight: bold;
+            text-transform: uppercase; 
+            opacity: 1; 
+        }
     </style>
 </head>
 <body>
-    <h1>HAPPY BIRTHDAY, <span>Akkie</span></h1>
+    <h1>HAPPY BIRTHDAY, <span>Vané</span></h1>
     <p>Make sure you check everything before unwrapping the big surprise!</p>
     <button onclick="redirectToRepl()">SURPRISE!</button>
 
     <div class="cute-box"></div>
     <div class="surprise-box"></div>
-
+    <div class="vane-name" id="vaneName"></div>
+    
     <script>
         function redirectToRepl() {
-            window.open("https://replit.com/@AbdullahHendy/Surprise?v=1");
+            window.open("https://replit.com/@AbdullahHendy/Surprise#README.txt");
         }
+
+        function animateName(index) {
+            const nameElement = document.getElementById('vaneName');
+            const name = "vanessa";
+            const delay = 500; // ms
+
+            setTimeout(() => {
+                nameElement.innerHTML = name.substring(0, index + 1);
+
+                if (index < name.length - 1) {
+                    animateName(index + 1);
+                } else {
+                    setTimeout(() => {
+                        nameElement.innerHTML = '';
+                        animateName(0); // Reset
+                    }, delay);
+                }
+            }, delay);
+        }
+
+        animateName(0);
     </script>
 </body>
 </html>
