@@ -85,6 +85,41 @@
             opacity: 0.25; 
         }
 
+        #secondButton {
+            position: absolute;
+            bottom: 3vw;
+            left: 3vw; 
+            background-color: #525589;
+            color: #000000;
+            padding: 1vw 2vw;
+            font-size: 2vw;
+            text-transform: uppercase; 
+            font-weight: bold;
+            font-family: 'Dancing Script', cursive; 
+            border: none;
+            border-radius: 1vw;
+            cursor: pointer;
+        }
+
+        #secondButton:hover {
+            background-color: transparent; 
+        }
+
+        #secondButton::before {
+            content: ''; 
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('media/button.jpg'); 
+            background-size: cover;
+            opacity: 0; 
+            transition: opacity 0.3s ease; 
+        }
+
+        #secondButton:hover::before {
+            opacity: 0.25; 
+        }
+
         .cute-box {
             position: absolute;
             top: 23vh;
@@ -159,8 +194,8 @@
 
         .vane-name {
             position: absolute;
-            bottom: 10vh; 
-            left: 5vw; 
+            bottom: 40vh; 
+            right: 2vw; 
             color: #ff69b4;
             font-family: 'Dancing Script', cursive;
             font-size: 5vw;
@@ -171,20 +206,39 @@
     </style>
 </head>
 <body>
-    <img id="background-image" src="media/Stitch_wallpaper.jpg" alt="Background Image">
+    <img id="background-image" src="media/Stitch_the_first.jpg" alt="Background Image">
     <h1>HAPPY BIRTHDAY, <span>Vané</span></h1>
     <p>Make sure you check everything before unwrapping the big surprise!</p>
     <button onclick="redirectToRepl()">SURPRISE!</button>
+    <button id="secondButton" onclick="changeBackground()">ANOTHER STITCH!</button>
 
     <div class="cute-box"></div>
     <div class="surprise-box"></div>
     <div class="vane-name" id="vaneName"></div>
 
     <script>
+        // Replit button
         function redirectToRepl() {
             window.open("https://replit.com/@AbdullahHendy/Surprise#main.py");
         }
 
+        // Change background
+        let backgroundIdx = 0;
+        const backgroundImages = [
+            'media/Stitch_the_first.jpg',
+            'media/Stitch_the_second.jpg',
+            'media/Stitch_the_third.jpg',
+            'media/Stitch_the_fourth.jpg',
+            'media/Stitch_the_fifth.jpg'
+        ];
+
+        function changeBackground() {
+            backgroundIdx = (backgroundIdx + 1) % backgroundImages.length;
+            const backgroundImageElement = document.getElementById('background-image');
+            backgroundImageElement.src = backgroundImages[backgroundIdx];
+        }
+
+        // Name animation 
         function animateName(index) {
             const nameElement = document.getElementById('vaneName');
             const name = "vanessa";
@@ -203,7 +257,6 @@
                 }
             }, delay);
         }
-
         animateName(0);
     </script>
 </body>
